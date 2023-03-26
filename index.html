@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Mortgage Calculator</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  
+   
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main id="app">
+    <div class="container" >
+        <div class="row" >
+            <div class="col-md-8 mx-auto">
+                <div class="border-5 px-5 py-2">
+                    <h1 class="fw-bolder my-5">Mortagage Calculator</h1>
+                    <form>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="fw-bold">Purchase price: $ {{p.toLocaleString()}}</h3>
+                            <input min="0" max="1000000" v-model="p" type="range" @input="updatePurchasePrice($event)" name="purchase" id="purchase">
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="fw-bold">Down Payment: $ {{d.toLocaleString()}}</h3>
+                            <input min="0" max="1000000" v-model="d" @input="updatePurchasePrice($event)" type="range" name="down" id="down">
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Repayment time: {{n.toLocaleString()}} years</h3>
+                            <input min="0" max="100" v-model="n" type="range" name="time" id="Repayment">
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Interset Rate: {{r.toLocaleString()}}</h3>
+                            <input min="0" max="100" v-model="r" type="range" name="rate" id="Repayment">
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Loan Payment</h3>
+                            <span class="fw-bold">$ {{loan.toLocaleString()}}</span>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Estimated pr.month</h3>
+                            <span class="fw-bold">$ {{m.toLocaleString()}}</span>
+                        </div>
+                        <button @click="calculate" name="" id="" class="btn btn-pruple" type="button"  role="button">Get Mortgage Quote</button>
+                        
+                    </div>
+                </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <!-- Vue js 3 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./script.js"></script>
+  
+</body>
+
+</html>
