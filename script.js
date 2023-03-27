@@ -16,15 +16,22 @@ createApp({
       if(this.p === 0 || this.d === 0 || this.n === 0 || this.r === 0 ){
         this.loan=0 
         this.m=0 
-        ret
+        return
       }
       else{
         if (!this.loanamt()) {
           return;
         }
         this.m = this.loan * (this.r/1200) * (Math.pow(1+this.r/1200, this.n*12)) / (Math.pow(1+this.r/1200, this.n*12) - 1);
-        this.m = Math.ceil(this.m);
-        this.m = this.m.toLocaleString();
+        if(this.r === "0" || this.n === "0"){
+          console.log(this.m)
+          this.m=0
+        }
+        else{
+          this.m = Math.ceil(this.m);
+          this.m = this.m.toLocaleString();
+        }
+        
       }
 
     },
